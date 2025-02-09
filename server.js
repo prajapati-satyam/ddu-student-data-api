@@ -7,11 +7,15 @@ const find_data = require('./router/find_data');
 const cors = require('cors');
 const ejs_find = require('./controller/ejs_controller');
 
+const path = require('path');  // Add this line
+
 
 conectDB();
 //adding view js engine
-
+app.set("views", path.join(__dirname, "views"));  // Ensure correct views path
 app.set("view engine", "ejs");
+
+// app.set("view engine", "ejs");
 
 
 app.use(cors());
