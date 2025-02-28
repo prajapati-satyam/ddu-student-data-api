@@ -34,6 +34,11 @@ app.get('/index', (req, res) => {
   res.sendFile('templates/index.html', { root: __dirname });
 })
 
+
+app.get('/custom', (req, res) => {
+  res.sendFile('public/custom.js', { root: __dirname });
+})
+
 app.get('/ejs/:rollnumber', async (req, res) => {
   const rollnumber = req.params.rollnumber;
   console.log(`request hit for ${rollnumber}`);
